@@ -38,8 +38,7 @@
                             <div class="user-menu">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-user"></i> 我的账户 </a></li>
-                                    <li><a href="#"><i class="fa fa-heart"></i> 心愿单 </a></li>
-                                    <li><a href="cart.html"><i class="fa fa-cart-plus fa-lg"></i> 购物车 </a></li>
+                                    <li><a href="#"><i class="fa fa-heart"></i> 收藏夹 </a></li>
                                     <li><a href="checkout.html"><i class="fa fa-file-text-o "></i> 订单 </a></li>
                                     <li><a href="#"><i class="fa fa-users"></i> 登录/注册 </a></li>
                                 </ul>
@@ -82,7 +81,7 @@
                             <li><a href="shop.html"> 购物商城 </a></li>
                             <li><a href="cart.html"> 购物车 </a></li>
                             <li><a href="checkout.html"> 收货信息 </a></li>
-                            <li><a href="contactus.html"> 客服 </a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -94,7 +93,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>购物车</h2>
+                        <h2>提交订单</h2>
                     </div>
                 </div>
             </div>
@@ -116,7 +115,7 @@
                     </div>
                     
                     <div class="single-sidebar">
-                        <h2 class="sidebar-title">商品</h2>
+                        <h2 class="sidebar-title">推荐商品</h2>
                         <div class="thubmnail-recent">
                             <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
                             <h2><a href="single-product.html"> 西式优雅沙发 </a></h2>
@@ -143,7 +142,7 @@
                     </div>
                     
                
-
+                         <div>
                             <form id="login-form-wrap" class="login collapse" method="post">
 
 
@@ -172,6 +171,7 @@
 
                                 <div class="clear"></div>
                             </form>
+                            </div>
 
                             <div class="woocommerce-info">有优惠券吗？<a class="showcoupon" data-toggle="collapse" href="#coupon-collapse-wrap" aria-expanded="false" aria-controls="coupon-collapse-wrap">单击这里输入您的优惠码</a>
                             </div>
@@ -179,14 +179,14 @@
                             <form id="coupon-collapse-wrap" method="post" class="checkout_coupon collapse">
 
                                 <p class="form-row form-row-first">
-                                    <input type="text" value="" id="coupon_code" placeholder="4位数" class="input-text" name="coupon_code">
+                                    <input type="text" value="" id="coupon_code" placeholder="请输入4位数" class="input-text" name="coupon_code">
                                 </p>
 
                                 <p class="form-row form-row-last">
-                                    <input type="submit" value="使用它" name="apply_coupon" class="button">
+                                    <input type="submit" value="使用" name="apply_coupon" class="button">
                                 </p>
 
-                                <div class="clear"></div>
+                                <div class="clear">
                             </form>
 
                             <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
@@ -194,7 +194,7 @@
                                 <div id="customer_details" class="col2-set">
                                     <div class="col-1">
                                         <div class="woocommerce-billing-fields">
-                                            <h3>账单详情</h3>
+                                            <h3>订单详情</h3>
                                             <p id="billing_country_field" class="form-row form-row-wide address-field update_totals_on_change validate-required woocommerce-validated">
                                                 <label class="" for="billing_country">城市<abbr title="required" class="required">*</abbr>
                                                 </label>
@@ -242,11 +242,7 @@
                                                 <input type="text" value="" placeholder="" id="billing_first_name" name="billing_first_name" class="input-text ">
                                             </p>
 
-                                            <p id="billing_last_name_field" class="form-row form-row-last validate-required">
-                                                <label class="" for="billing_last_name">姓名2 <abbr title="required" class="required">*</abbr>
-                                                </label>
-                                                <input type="text" value="" placeholder="" id="billing_last_name" name="billing_last_name" class="input-text ">
-                                            </p>
+                                           
                                             <div class="clear"></div>
 
                                             <p id="billing_company_field" class="form-row form-row-wide">
