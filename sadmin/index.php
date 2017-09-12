@@ -2,15 +2,11 @@
 
 session_start();
 
-var_dump($_SESSION);
-die();
-if(1) {
+if(!$_SESSION['userinfo']) {
     echo "<script>alert('请先登录管理员账户'); window.location.href='./login.html'</script>>";
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +35,7 @@ if(1) {
 				<span class="icon-bar"></span> 
 				<span class="icon-bar"></span> 				
 			</a>
-			<a class="brand" href="./">Sadmin</a>
+			<a class="brand" href="./"> Lyy-CMS内容管理系统 </a>
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
 					<li class="divider-vertical"></li>
@@ -56,7 +52,7 @@ if(1) {
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="./"><i class="icon-off"></i>退出</a>
+								<a href="./php/logout.php"><i class="icon-off"></i>退出</a>
 							</li>
 						</ul>
 					</li>
@@ -94,45 +90,46 @@ if(1) {
 					<li>
 						<a href="./faq.html">
 							<i class="icon-pushpin"></i>
-							帮助页面	
+							用户管理	
 						</a>
 					</li>
 					<li>
 						<a href="./plans.html">
 							<i class="icon-th-list"></i>
-							价目表单		
+							商品管理
+							<span class="label label-warning pull-right"> 3 </span>
 						</a>
 					</li>
 					<li>
 						<a href="./grid.html">
 							<i class="icon-th-large"></i>
-							网格布局
-							<span class="label label-warning pull-right">5</span>
+							地址管理
 						</a>
 					</li>
 					<li>
 						<a href="./charts.html">
 							<i class="icon-signal"></i>
-							图表统计
+							订单管理
 						</a>
 					</li>
 					<li>
 						<a href="./account.html">
 							<i class="icon-user"></i>
-							用户账号					
+							用户管理					
 						</a>
 					</li>
 					
 					<li>
-						<a href="./login.html">
+						<a href="./php/logout.php">
 							<i class="icon-lock"></i>
-							登录页面
+							退出系统
 						</a>
 					</li>
 				</ul>	
 				<hr />
 				<div class="sidebar-extra">
-					<p>这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字.</p>
+					<p>欢迎使用lyy-cms内容管理系统，lyy-cms内容管理系统前端为COSY HONE知名家具公司。</p>
+					<p>COSY Home, 致力于打造一个优质家具的购物平台，用贴心真诚的服务成为专属于您的家庭小帮手。该web项目团队成员由杨雪晋，叶虹霓，刘婷三人组成，拥有最强大脑和最强美工的强强联合，你有没有心动呢？满意的话请给我们5星好评吧！比心！</p>
 				</div> <!-- .sidebar-extra -->
 				<hr />
 			</div> <!-- /span3 -->
@@ -144,60 +141,48 @@ if(1) {
 				<div class="stat-container">
 					<div class="stat-holder">						
 						<div class="stat">							
-							<span>564</span>							
-							销售订单						
+							<span> 564 </span>							
+							累计销售订单						
 						</div> <!-- /stat -->						
 					</div> <!-- /stat-holder -->
 					<div class="stat-holder">						
 						<div class="stat">							
-							<span>423</span>							
-							增加订单							
+							<span> 23 </span>							
+							用户总人数							
 						</div> <!-- /stat -->						
 					</div> <!-- /stat-holder -->
 					<div class="stat-holder">						
 						<div class="stat">							
-							<span>96</span>							
+							<span> 96 </span>							
 							退货订单							
 						</div> <!-- /stat -->						
 					</div> <!-- /stat-holder -->
 					<div class="stat-holder">						
 						<div class="stat">							
-							<span>2</span>							
+							<span> 2 </span>							
 							退款数量							
 						</div> <!-- /stat -->						
 					</div> <!-- /stat-holder -->
 				</div> <!-- /stat-container -->
-				<div class="widget">
-					<div class="widget-header">
-						<i class="icon-signal"></i>
-						<h3>图表统计</h3>
-					</div> <!-- /widget-header -->
-					<div class="widget-content">					
-						<div id="bar-chart" class="chart-holder"></div> <!-- /bar-chart -->				
-					</div> <!-- /widget-content -->
-				</div> <!-- /widget -->
 				<div class="widget widget-table">
 					<div class="widget-header">
 						<i class="icon-th-list"></i>
-						<h3>表格</h3>
+						<h3> 管理员显示列表 </h3>
 					</div> <!-- /widget-header -->
 					<div class="widget-content">
 						<table class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th></th>
-									<th>用户名</th>
-									<th>姓名</th>
-									<th>昵称</th>
-									<th>公司</th>
+									<th>唯一编码</th>
+									<th>账户名称</th>
+									<th>加密密码</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>1</td>
-									<td>Michael</td>
-									<td>Jordan</td>
-									<td>@mjordan</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
 									<td class="action-td">
 										<a href="javascript:;" class="btn btn-small btn-warning">
 											<i class="icon-ok"></i>
@@ -208,129 +193,114 @@ if(1) {
 									</td>
 								</tr>
 								<tr>
-									<td>2</td>
-									<td>Magic</td>
-									<td>Johnson</td>
-									<td>@mjohnson</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>	
-										</a>						
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Charles</td>
-									<td>Barkley</td>
-									<td>@cbarkley</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>		
-										</a>						
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Karl</td>
-									<td>Malone</td>
-									<td>@kmalone</td>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
 									<td class="action-td">
 										<a href="javascript:;" class="btn btn-small btn-warning">
 											<i class="icon-ok"></i>
-										</a>					
+										</a>
 										<a href="javascript:;" class="btn btn-small">
 											<i class="icon-remove"></i>
 										</a>
 									</td>
 								</tr>
 								<tr>
-									<td>5</td>
-									<td>David</td>
-									<td>Robinson</td>
-									<td>@drobinson</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>	
-										</a>						
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>Reggie</td>
-									<td>Miller</td>
-									<td>@rmiller</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>	
-										</a>						
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>Clyde</td>
-									<td>Drexler</td>
-									<td>@cdrexler</td>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
 									<td class="action-td">
 										<a href="javascript:;" class="btn btn-small btn-warning">
 											<i class="icon-ok"></i>
-										</a>						
+										</a>
 										<a href="javascript:;" class="btn btn-small">
 											<i class="icon-remove"></i>
 										</a>
 									</td>
 								</tr>
 								<tr>
-									<td>8</td>
-									<td>Hakeem</td>
-									<td>Olajuwon</td>
-									<td>@holajuwon</td>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
 									<td class="action-td">
 										<a href="javascript:;" class="btn btn-small btn-warning">
 											<i class="icon-ok"></i>
-										</a>						
+										</a>
 										<a href="javascript:;" class="btn btn-small">
 											<i class="icon-remove"></i>
 										</a>
 									</td>
 								</tr>
+								<tr>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
+									<td class="action-td">
+										<a href="javascript:;" class="btn btn-small btn-warning">
+											<i class="icon-ok"></i>
+										</a>
+										<a href="javascript:;" class="btn btn-small">
+											<i class="icon-remove"></i>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
+									<td class="action-td">
+										<a href="javascript:;" class="btn btn-small btn-warning">
+											<i class="icon-ok"></i>
+										</a>
+										<a href="javascript:;" class="btn btn-small">
+											<i class="icon-remove"></i>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
+									<td class="action-td">
+										<a href="javascript:;" class="btn btn-small btn-warning">
+											<i class="icon-ok"></i>
+										</a>
+										<a href="javascript:;" class="btn btn-small">
+											<i class="icon-remove"></i>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
+									<td class="action-td">
+										<a href="javascript:;" class="btn btn-small btn-warning">
+											<i class="icon-ok"></i>
+										</a>
+										<a href="javascript:;" class="btn btn-small">
+											<i class="icon-remove"></i>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>admin</td>
+									<td>e10adc3949ba59abbe56e057f20f883e</td>
+									<td class="action-td">
+										<a href="javascript:;" class="btn btn-small btn-warning">
+											<i class="icon-ok"></i>
+										</a>
+										<a href="javascript:;" class="btn btn-small">
+											<i class="icon-remove"></i>
+										</a>
+									</td>
+								</tr>
+								
 							</tbody>
 						</table>
 					</div> <!-- /widget-content -->
 				</div> <!-- /widget -->
-				<div class="row">
-					<div class="span5">
-						<div class="widget">
-							<div class="widget-header">
-								<h3>5列标题</h3>
-							</div> <!-- /widget-header -->
-							<div class="widget-content">
-								<p>5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示5列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示.</p>
-							</div> <!-- /widget-content -->
-						</div> <!-- /widget -->
-					</div> <!-- /span5 -->
-					<div class="span4">
-						<div class="widget">
-							<div class="widget-header">
-								<h3>4列标题</h3>
-							</div> <!-- /widget-header -->
-							<div class="widget-content">
-								<p>4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示4列布局内容显示.</p>
-							</div> <!-- /widget-content -->
-						</div> <!-- /widget -->
-					</div> <!-- /span4 -->
-				</div> <!-- /row -->
 			</div> <!-- /span9 -->
 		</div> <!-- /row -->
 	</div> <!-- /container -->
