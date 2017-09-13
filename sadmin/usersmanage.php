@@ -138,9 +138,13 @@ if(!$_SESSION['userinfo']) {
 							<thead>
 								<tr>
 									<th>唯一编码</th>
-									<th>账户名称</th>
-									<th>加密密码</th>
-									<th>绑定邮箱</th>
+									<th>用户名</th>
+									<th>邮箱</th>
+									<th>性别</th>
+									<th>手机号</th>
+									<th>注册时间</th>
+									<th>用户等级</th>
+									<th>累计积分</th>
 									<th>数据操作</th>
 								</tr>
 							</thead>
@@ -148,7 +152,7 @@ if(!$_SESSION['userinfo']) {
 
 							<?php
 
-								$sql = "SELECT * FROM `admins`";
+								$sql = "SELECT * FROM `users`";
 								$result = $db->prepare($sql);  // 此时$result是一个PDO结果集对象
 								$result->execute();
 								$res = $result->fetchAll(PDO::FETCH_ASSOC);  // 此时结果集变成关联数组
@@ -160,9 +164,13 @@ if(!$_SESSION['userinfo']) {
 								    $output .= "<tr>";
 								    $output .= "<td>".$v['id']."</td>";
 								    $output .= "<td>".$v['username']."</td>";
-								    $output .= "<td>".$v['passwd']."</td>";
 								    $output .= "<td>".$v['email']."</td>";
-								    $output .= "<td><a class='btn btn-small btn-warning' href='./account.html?id=".$v["id"]."';>"."编辑"."</a><a href="."./php/admindelete class='btn btn-small btn-warning'> 删除 </a></td>";
+								    $output .= "<td>".$v['sex']."</td>";
+								    $output .= "<td>".$v['phone']."</td>";
+								    $output .= "<td>".$v['register']."</td>";
+								    $output .= "<td>".$v['grade']."</td>";
+								    $output .= "<td>".$v['integrals']."</td>";
+								    $output .= "<td><a class='btn btn-small btn-warning' href='./account.html?id=".$v["id"]."';>"." 编辑 "."</a> <a class='btn btn-small btn-warning' href='./php/admindel?id=".$v["id"]."';>"." 删除 "."</a></td>";
 
 
 								    $output .= "</tr>";

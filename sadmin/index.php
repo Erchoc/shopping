@@ -188,7 +188,7 @@ if(!$_SESSION['userinfo']) {
 								    $output .= "<td>".$v['username']."</td>";
 								    $output .= "<td>".$v['passwd']."</td>";
 								    $output .= "<td>".$v['email']."</td>";
-								    $output .= "<td><a class='btn btn-small btn-warning' href='./account.html?id=".$v["id"]."';>"."编辑"."</a><a href="."./php/admindelete class='btn btn-small btn-warning'> 删除 </a></td>";
+								    $output .= "<td><a class='btn btn-small btn-warning' href='./account.html?id=".$v["id"]."';>"." 编辑 "."</a> <a class='btn btn-small btn-warning' href='./php/admindel?id=".$v["id"]."';>"." 删除 "."</a></td>";
 
 
 								    $output .= "</tr>";
