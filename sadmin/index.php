@@ -1,9 +1,12 @@
 <?php
 
+header('Content-Type: text/html; charset=utf-8');
+require_once ("./php/conn.php");
 session_start();
 
 if(!$_SESSION['userinfo']) {
     echo "<script>alert('请先登录管理员账户'); window.location.href='./login.html'</script>>";
+    exit;
 }
 
 ?>
@@ -84,41 +87,28 @@ if(!$_SESSION['userinfo']) {
 					<li class="active">
 						<a href="./">
 							<i class="icon-home"></i>
-							首页 		
+							后台首页 		
 						</a>
 					</li>
 					<li>
-						<a href="./faq.html">
+						<a href="./usersmanage.php">
 							<i class="icon-pushpin"></i>
 							用户管理	
 						</a>
 					</li>
 					<li>
-						<a href="./plans.html">
+						<a href="./goodsmanage.php">
 							<i class="icon-th-list"></i>
 							商品管理
 							<span class="label label-warning pull-right"> 3 </span>
 						</a>
 					</li>
 					<li>
-						<a href="./grid.html">
-							<i class="icon-th-large"></i>
-							地址管理
-						</a>
-					</li>
-					<li>
-						<a href="./charts.html">
+						<a href="./ordersmanage.php">
 							<i class="icon-signal"></i>
 							订单管理
 						</a>
-					</li>
-					<li>
-						<a href="./account.html">
-							<i class="icon-user"></i>
-							用户管理					
-						</a>
-					</li>
-					
+					</li>	
 					<li>
 						<a href="./php/logout.php">
 							<i class="icon-lock"></i>
@@ -136,7 +126,7 @@ if(!$_SESSION['userinfo']) {
 			<div class="span9">
 				<h1 class="page-title">
 					<i class="icon-home"></i>
-					首页					
+					后台首页					
 				</h1>
 				<div class="stat-container">
 					<div class="stat-holder">						
@@ -153,13 +143,13 @@ if(!$_SESSION['userinfo']) {
 					</div> <!-- /stat-holder -->
 					<div class="stat-holder">						
 						<div class="stat">							
-							<span> 96 </span>							
-							退货订单							
+							<span> 36 </span>							
+							订单出货中							
 						</div> <!-- /stat -->						
 					</div> <!-- /stat-holder -->
 					<div class="stat-holder">						
 						<div class="stat">							
-							<span> 2 </span>							
+							<span> 52 </span>							
 							退款数量							
 						</div> <!-- /stat -->						
 					</div> <!-- /stat-holder -->
@@ -176,128 +166,38 @@ if(!$_SESSION['userinfo']) {
 									<th>唯一编码</th>
 									<th>账户名称</th>
 									<th>加密密码</th>
+									<th>绑定邮箱</th>
+									<th>数据操作</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>admin</td>
-									<td>e10adc3949ba59abbe56e057f20f883e</td>
-									<td class="action-td">
-										<a href="javascript:;" class="btn btn-small btn-warning">
-											<i class="icon-ok"></i>
-										</a>
-										<a href="javascript:;" class="btn btn-small">
-											<i class="icon-remove"></i>
-										</a>
-									</td>
-								</tr>
-								
-							</tbody>
+
+
+							<?php
+
+								$sql = "SELECT * FROM `admins`";
+								$result = $db->prepare($sql);  // 此时$result是一个PDO结果集对象
+								$result->execute();
+								$res = $result->fetchAll(PDO::FETCH_ASSOC);  // 此时结果集变成关联数组
+								// var_dump($res);
+
+								$output = "<tbody>";
+								foreach ($res as $k => $v) {
+								    // $result is your query result array
+								    $output .= "<tr>";
+								    $output .= "<td>".$v['id']."</td>";
+								    $output .= "<td>".$v['username']."</td>";
+								    $output .= "<td>".$v['passwd']."</td>";
+								    $output .= "<td>".$v['email']."</td>";
+								    $output .= "<td><a class='btn btn-small btn-warning' href='./account.html?id=".$v["id"]."';>"."编辑"."</a><a href="."./php/admindelete class='btn btn-small btn-warning'> 删除 </a></td>";
+
+
+								    $output .= "</tr>";
+
+								}
+								$output .= "</tdoby>";
+								echo $output;
+
+							 ?>
 						</table>
 					</div> <!-- /widget-content -->
 				</div> <!-- /widget -->

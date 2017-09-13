@@ -19,11 +19,12 @@ $password = $_POST['password']?$_POST['password']:null;
 // mock admins data
 
 // $passDemo = md5('123456');
-// $sqlDemo  = "INSERT INTO `admins` SET `username`=:username, `passwd`=:password";
+// $email = 'erchoc@qq.com';
+// $sqlDemo  = "INSERT INTO `admins` SET `username`=:username, `passwd`=:password, `email`=:email";
 
 // $result = $db->prepare($sqlDemo);
-// $result->execute(array(":username"=>"admin", ":password"=>"$passDemo"));
-
+// $result->execute(array(":username"=>"admin1997", ":password"=>"$passDemo", ":email"=>"$email"));
+// exit;
 
 $sql = "SELECT * FROM `admins` WHERE `username`=:username";
 $result = $db->prepare($sql);  // 此时$result是一个PDO结果集对象
