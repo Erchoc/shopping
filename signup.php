@@ -18,7 +18,7 @@
     die('Error: ' . mysql_error());//如果sql执行失败输出错误
   }else{
     echo "注册成功";//成功输出注册成功
-    header("refresh:0;url=index.html");
+    header("refresh:0;url=welcome.html");
   }
  
    

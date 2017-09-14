@@ -13,7 +13,7 @@
        $result = mysql_query($sql);//执行sql
        $rows=mysql_num_rows($result);//返回一个数值
        if($rows){//0 false 1 true
-          header("refresh:0;url=index.html");//如果成功跳转至welcome.html页面
+          header("refresh:0;url=index1.html");//如果成功跳转至登录后主页
           exit;
        }else{
         echo "用户名或密码错误";
