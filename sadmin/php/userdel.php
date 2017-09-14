@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 require_once ("./conn.php");
 
 	$id  = $_GET['id'];
-	$sql = "DELETE FROM `admins` WHERE `id`=:id";
+	$sql = "DELETE FROM `users` WHERE `id`=:id";
 	$result = $db->prepare($sql);
 	$res = $result->execute(array(":id"=>"$id"));
 	if ($res) {

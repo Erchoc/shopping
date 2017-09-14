@@ -137,18 +137,22 @@ if(!$_SESSION['userinfo']) {
 						<table class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th>唯一编码</th>
-									<th>账户名称</th>
-									<th>加密密码</th>
-									<th>绑定邮箱</th>
-									<th>数据操作</th>
+									<th>商品编码</th>
+									<th>商品名称</th>
+									<th>库存</th>
+									<th>类型</th>
+									<th>是否推荐</th>
+									<th>积分</th>
+									<th>上架时间</th>
+									<th>原价格</th>
+									<th>新价格</th>
 								</tr>
 							</thead>
 
 
 							<?php
 
-								$sql = "SELECT * FROM `admins`";
+								$sql = "SELECT * FROM `goods`";
 								$result = $db->prepare($sql);  // 此时$result是一个PDO结果集对象
 								$result->execute();
 								$res = $result->fetchAll(PDO::FETCH_ASSOC);  // 此时结果集变成关联数组
@@ -159,14 +163,16 @@ if(!$_SESSION['userinfo']) {
 								    // $result is your query result array
 								    $output .= "<tr>";
 								    $output .= "<td>".$v['id']."</td>";
-								    $output .= "<td>".$v['username']."</td>";
-								    $output .= "<td>".$v['passwd']."</td>";
-								    $output .= "<td>".$v['email']."</td>";
-								    $output .= "<td><a class='btn btn-small btn-warning' href='./account.html?id=".$v["id"]."';>"." 编辑 "."</a> <a class='btn btn-small btn-warning' href='./php/admindel?id=".$v["id"]."';>"." 删除 "."</a></td>";
-
-
+								    $output .= "<td>".$v['gname']."</td>";
+								    $output .= "<td>".$v['number']."</td>";
+								    $output .= "<td>".$v['gtype']."</td>";
+								    $output .= "<td>".$v['recommend']."</td>";
+								    $output .= "<td>".$v['integrals']."</td>";
+								    $output .= "<td>".$v['up_time']."</td>";
+								    $output .= "<td>".$v['old_price']."</td>";
+								    $output .= "<td>".$v['new_price']."</td>";
+								    $output .= "<td><a class='btn btn-small btn-warning' href='./account.html?id=".$v["id"]."';>"." 编辑 "."</a> <a class='btn btn-small btn-warning' href='./php/admindel.php?id=".$v["id"]."';>"." 删除 "."</a></td>";
 								    $output .= "</tr>";
-
 								}
 								$output .= "</tdoby>";
 								echo $output;

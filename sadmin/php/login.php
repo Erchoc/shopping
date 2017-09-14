@@ -40,31 +40,32 @@ $password = $_POST['password']?$_POST['password']:null;
 // exit;
 
 // mock goods data
-// $gname = '';
-// $number = 1000;
-// $gtype = '';
-// $intro = '';
-// $recommend = '';
-// $integrals = '';
-// $up_time = '';
-// $old_price = '';
-// $new_price = '';
-// $sqlDemo  = "INSERT INTO `goods` SET `gname`=:gname, `number`=:$number, `gtype`=:gtype, `intro`=:intro, `recommend`=:recommend, `integrals`=:integrals, `up_time`=:up_time, `old_price`=:old_price, `new_price`=:new_price";
+// $gname = '欧式实木双人床 优质工艺 主卧';
+// $number = '600';
+// $gtype = '卧室家具';
+// $intro = '实木';
+// $recommend = '推荐';
+// $integrals = '100';
+// $up_time = '2016-09-03';
+// $old_price = '12000';
+// $new_price = '10000';
+// $sqlDemo  = "INSERT INTO `goods` SET `gname`=:gname, `number`=:number, `gtype`=:gtype, `intro`=:intro, `recommend`=:recommend, `integrals`=:integrals, `up_time`=:up_time, `old_price`=:old_price, `new_price`=:new_price";
+
 // $result = $db->prepare($sqlDemo);
-// $result->execute(array(":gname"=>"$gname", ":number"=>"$number", ":gtype"=>"$gtype", `intro`="$intro", `recommend`="$recommend", `integrals`="$integrals", `up_time`="$up_time", `old_price`="$old_price", `new_price`="$new_price"));
+// $result->execute(array(":gname"=>"$gname", ":number"=>"$number", ":gtype"=>"$gtype", ":intro"=>"$intro", ":recommend"=>"$recommend", ":integrals"=>"$integrals", ":up_time"=>"$up_time", ":old_price"=>"$old_price", ":new_price"=>"$new_price"));
 // exit;
 
 // mock orders data
-// $uid = ;
-// $gid = ;
-// $username  = '';
-// $order_time= '';
-// $address   = '';
-// $phone     = ;
-// $remarks   = '';
+// $uid = 4;
+// $gid = 6;
+// $username  = 'user_mock_4';
+// $order_time= '2016-08-02';
+// $address   = '江西省南昌市182号';
+// $phone     = '1353238401';
+// $remarks   = '快点发货啊';
 // $sqlDemo  = "INSERT INTO `orders` SET `uid`=:uid, `gid`=:gid, `username`=:username, `order_time`=:order_time, `address`=:address, `phone`=:phone, `remarks`=:remarks";
 // $result = $db->prepare($sqlDemo);
-// $result->execute(array(":uid"=>"$uid", ":gid"=>"$gid", ":username"=>"$username", `order_time`="$order_time", `address`="$address", `phone`="$phone", `remarks`="$remarks"));
+// $result->execute(array(":uid"=>"$uid", ":gid"=>"$gid", ":username"=>"$username", "order_time"=>"$order_time", "address"=>"$address", "phone"=>"$phone", "remarks"=>"$remarks"));
 // exit;
 
 
