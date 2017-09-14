@@ -45,15 +45,12 @@
 	<body>
 
 
-		<div class="container">
-		
-           
+		<div class="container"> 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					
-
 					<!-- Start Sign In Form -->
-					<form action="logincheck.php" methos="post" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+					<form name="login" action="login.php" method="post" class="fh5co-form animate-box" data-animate-effect="fadeIn">
 						<h2> 登录 </h2>
 						<div class="form-group">
 							<label for="username" class="sr-only"> 用户名 </label>
@@ -65,12 +62,10 @@
 						</div>
 
 						<div class="form-group">
-							<p>还没有账户？ <a href="sign-up.html">注册</a> | <a href="forgot.html"> 忘记密码?</a> 	<a href="./index.html"> | 返回首页 </a></p>
+							<p>还没有账户？ <a href="sign-up.html">注册</a>  	<a href="./index.html"> | 返回首页 </a></p>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="登录" class="btn btn-primary">
-							
-						
+							<input type="submit" name="submit" value="登录" class="btn btn-primary">
 						</div>
 					</form>
 					<!-- END Sign In Form -->

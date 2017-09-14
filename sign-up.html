@@ -51,32 +51,29 @@
 					
 
 					<!-- Start Sign In Form -->
-					<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+					<form action="signup.php" method="post" class="fh5co-form animate-box" data-animate-effect="fadeIn">
 						<h2> 注册 </h2>
 						<div class="form-group">
 							<label for="name" class="sr-only"> 用户名 </label>
-							<input type="text" class="form-control" id="name" placeholder="用户名" autocomplete="off">
+							<input type="text" class="form-control" name="name" placeholder="用户名" autocomplete="off">
 						</div>
 						<div class="form-group">
 							<label for="email" class="sr-only"> 邮箱 </label>
-							<input type="email" class="form-control" id="email" placeholder="邮箱" autocomplete="off">
+							<input type="email" class="form-control" name="email" placeholder="邮箱" autocomplete="off">
 						</div>
 						<div class="form-group">
 							<label for="password" class="sr-only"> 密码 </label>
-							<input type="password" class="form-control" id="password" placeholder="密码" autocomplete="off">
+							<input type="password" class="form-control" name="password" placeholder="密码" autocomplete="off">
 						</div>
+						
 						<div class="form-group">
-							<label for="re-password" class="sr-only"> 重新输入密码 </label>
-							<input type="password" class="form-control" id="re-password" placeholder=" 重新输入密码 " autocomplete="off">
-						</div>
-						<div class="form-group">
-							<label for="remember"><input type="checkbox" id="remember"> 请记住我！ </label>
+							<label for="remember"><input type="checkbox" name="remember"> 请记住我！ </label>
 						</div>
 						<div class="form-group">
 							<p> 已经拥有账户? <a href="login.html">  登录 </a></p>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="注册" class="btn btn-primary">
+							<input type="submit" name="submit" value="注册" class="btn btn-primary">
 						</div>
 					</form>
 					<!-- END Sign In Form -->
