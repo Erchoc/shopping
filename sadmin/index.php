@@ -9,6 +9,9 @@ if(!$_SESSION['userinfo']) {
     exit;
 }
 
+
+// var_dump($_SESSION['userinfo']);
+// exit;
 ?>
 
 <!DOCTYPE html>

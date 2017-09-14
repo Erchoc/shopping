@@ -3,6 +3,8 @@
 header('Content-Type: text/html; charset=utf-8');
 require_once ("./conn.php");
 
-// usset($_SESSION['userinfo']);
+session_start();
+
+session_destroy();
 
 header("location: ../login.html");

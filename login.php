@@ -6,7 +6,7 @@
  
   include('connect.php');//链接数据库
   $name = $_POST['username'];//post获得用户名表单值
-  $passowrd = $_POST['password'];//post获得用户密码单值
+  $passowrd = md5($_POST['password']);//post获得用户密码单值
  
   if ($name && $passowrd){//如果用户名和密码都不为空
        $sql = "select * from users where username = '$name' and passwd='$passowrd'";//检测数据库是否有对应的username和password的sql

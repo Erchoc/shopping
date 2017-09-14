@@ -5,9 +5,9 @@
     exit("错误执行");
   }//判断是否有submit操作
  
-  $name=$_POST['name'];//post获取表单里的name
-  $password=$_POST['password'];//post获取表单里的password
-  $email=$_POST['email'];//post获取表单里的email
+  $name     = $_POST['name'];//post获取表单里的name
+  $password = md5($_POST['password']);//post获取表单里的password
+  $email    = $_POST['email'];//post获取表单里的email
 
  
   include('connect.php');//链接数据库
